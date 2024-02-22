@@ -1,0 +1,87 @@
+@red: #ff0000;
+@blue: #0000ff;
+@green: green;
+@purple: #800080;
+@nav-background: orange;
+@footer-background: white;
+@text-color: black;
+
+@border-radius: 8px;
+@border: 2px solid black;
+@nav-height: 40px;
+@footer-height: 30px;
+@box-margin: 100px;
+
+@font-stack: 'Helvetica', 'Arial', sans-serif;
+@base-font-size: 16px;
+
+body {
+  background-color: gray;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: @nav-height;
+  background-color: @nav-background;
+  color: @text-color;
+  padding: (@nav-height / 4) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: @font-stack;
+  font-size: @base-font-size;
+}
+
+.footer {
+  position: fixed;
+  bottom: 100px;
+  width: 100%;
+  height: @footer-height;
+  background-color: @footer-background;
+  color: @text-color;
+  padding: (@footer-height / 4) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: @font-stack;
+  font-size: @base-font-size;
+}
+
+.box {
+  border-radius: @border-radius;
+  border: @border;
+  margin: @box-margin;
+  display: inline-block;
+}
+
+.red-box {
+  .generateBox(@red, 100px);
+}
+
+.blue-box {
+  .generateBox(@blue, 200px);
+}
+
+.green-box {
+  .generateBox(@green, 250px);
+}
+
+.purple-box {
+  .generateBox(@purple, 50px);
+}
+
+.generateBox(@color, @size) {
+  background-color: @color;
+  height: @size;
+  width: @size;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - @nav-height - @footer-height);
+  flex-wrap: wrap;
+}
